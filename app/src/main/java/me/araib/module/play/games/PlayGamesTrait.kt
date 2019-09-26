@@ -12,7 +12,7 @@ import com.google.android.gms.games.Player
 import me.araib.core.utils.*
 
 @ExposedClass(
-    author = "araib.shafiq@ideofuzion.com",
+    author = "m.araib.shafiq@gmail.com",
     purpose = "Base class extension for easy handling of play games account and states",
     provides = [
         "toggleSignIn",
