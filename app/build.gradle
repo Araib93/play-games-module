@@ -4,9 +4,17 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+ext {
+    GROUP_ID = 'araib.me'
+    ARTIFACT_ID = 'play-games-module'
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+    compileOptions {
+        kotlinOptions.freeCompilerArgs += ['-module-name', "$GROUP_ID.$ARTIFACT_ID"]
+    }
     defaultConfig {
         minSdkVersion 23
         targetSdkVersion 29
