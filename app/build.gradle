@@ -31,7 +31,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.github.Araib93:core:v0.2'
+    compileOnly 'com.github.Araib93:core:v0.1'
 
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation "com.google.android.gms:play-services-base:17.1.0"
