@@ -13,7 +13,7 @@ import me.araib.core.utils.*
 
 @ExposedClass(
     author = "m.araib.shafiq@gmail.com",
-    purpose = "Base class extension for easy handling of play games account and states",
+    purpose = "Trait class extension for easy handling of play games account and states",
     provides = [
         "toggleSignIn",
         "signInToPlayGames",
@@ -27,14 +27,13 @@ import me.araib.core.utils.*
         "googlePlayerAccountObservable"
     ],
     requires = [
+        "initPlayGamesTrait",
         "showPlayGamesSignInError",
         "changeUIForSignIn",
         "showSignedInToast"
     ]
 )
 interface PlayGamesTrait {
-    fun initPlayGamesTrait(context: Context)
-
     @ExposedProperty(purpose = "Observable for checking play games availability manually")
     @PossibleValue(
         values = [
@@ -132,6 +131,33 @@ interface PlayGamesTrait {
     )
     fun showPlayGamesSignInError(message: String?)
 
+    @ExposedImplementFunction(purpose = "For initializing trait with context")
+    @PossibleValues(
+        name = "context",
+        values = [
+            "Context -> Sets lifecycle observer on this context"
+        ]
+    )
+    fun initPlayGamesTrait(context: Context)
+
+    @ExposedImplementFunction(purpose = "For changing UI based on sign in state")
+    @PossibleValues(
+        name = "signedIn",
+        values = [
+            "true -> Signed in successfully",
+            "false -> Signed out successfully",
+            "null -> No play games services found, hide all sign of play games"
+        ]
+    )
     fun changeUIForSignIn(signedIn: Boolean?)
+
+    @ExposedImplementFunction(purpose = "For showing signed in / signed out toast if need be")
+    @PossibleValues(
+        name = "player",
+        values = [
+            "<Player> -> Signed in as player",
+            "null -> Signed out"
+        ]
+    )
     fun showSignedInToast(player: Player?)
 }

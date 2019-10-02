@@ -1,6 +1,5 @@
 package me.araib.module.play.games
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -17,7 +16,6 @@ import com.google.android.gms.games.Games
 import com.google.android.gms.games.Player
 import me.araib.core.BaseActivity
 
-@SuppressLint("Registered")
 class PlayGamesTraitImpl() : LifecycleObserver, PlayGamesTrait {
     private var context: Context? = null
 
