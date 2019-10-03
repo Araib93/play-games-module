@@ -1,2 +1,2 @@
-include ':app'
+include ':play-games'
 rootProject.name='Module Play Games'
